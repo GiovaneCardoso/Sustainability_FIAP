@@ -18,7 +18,7 @@ class CompanyController extends Controller
 
     public function show( $id ){
 
-        $company = Company::with(['categories', 'rating'])->find($id);
+        $company = Company::with(['categories', 'rating', 'company_addresses', 'company_addresses.address'])->find($id);
 
         return response()->json($company, Response::HTTP_OK);
     }
