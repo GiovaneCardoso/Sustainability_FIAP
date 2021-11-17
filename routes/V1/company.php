@@ -14,6 +14,7 @@ Route::prefix('company')->name('company.')
             'Cosmeticos',]
     ));
     Route::get('/', [CompanyController::class, 'index']);
+    Route::get('/by/{category}', [CompanyController::class, 'indexByCategory']);
 
     Route::get('/{id}', [CompanyController::class, 'show']);
 
