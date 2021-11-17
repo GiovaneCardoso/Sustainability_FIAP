@@ -14,6 +14,7 @@ Route::prefix('auth')->name('auth.')
     });
 
     Route::post('login', [AuthController::class, 'login']);
+    Route::post('login/create', [AuthController::class, 'create']);
 
     //Router's with authentication
     Route::middleware(['api', 'jwt'])->group(function() {
