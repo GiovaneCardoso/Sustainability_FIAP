@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCompanyRatingTable extends Migration
+class CreateCompanyCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,16 @@ class CreateCompanyRatingTable extends Migration
      */
     public function up()
     {
-        Schema::create('company_rating', function (Blueprint $table) {
+        Schema::create('company_categories', function (Blueprint $table) {
             $table->id();
 
             $table->unsignedBigInteger('company_id');
 
-            $table->enum('rating', [
-                '1',
-                '2',
-                '3',
-                '4',
-                '5',
+            $table->enum('category', [
+                'Moda',
+                'Estetica',
+                'Tecido',
             ]);
-
-            $table->string('comment');
 
             $table->foreign('company_id')->references('id')->on('companies');
         });
@@ -39,6 +35,6 @@ class CreateCompanyRatingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('company_rating');
+        Schema::dropIfExists('company_categories');
     }
 }
