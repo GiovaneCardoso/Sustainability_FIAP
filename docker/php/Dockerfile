@@ -1,12 +1,9 @@
-    FROM php:8.0-fpm
+FROM php:8.0-fpm
 
 # Arguments defined in docker-compose.yml
 ARG user
 ARG uid
-
-RUN cd /usr/local/etc/php/conf.d/ && \
-  echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
-
+USER root
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \

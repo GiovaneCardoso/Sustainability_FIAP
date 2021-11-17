@@ -31,7 +31,7 @@ return [
     ],
 
     'jwt' => [
-        'key' => env('JWT_SECRET'),
+        'key' => env('JWT_SECRET', 'example_key'),
         'expire' => (int) env('JWT_EXPIRE'),
     ],
     'google' => [

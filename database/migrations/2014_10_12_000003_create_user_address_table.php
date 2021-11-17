@@ -31,6 +31,6 @@ class CreateUserAddressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('addresses');
+        Schema::dropIfExists('user_address');
     }
 }
