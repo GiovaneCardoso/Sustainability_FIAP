@@ -15,6 +15,9 @@ class Company extends Model
         'id'
     ];
 
+    public function rating(){
+        return $this->hasMany(CompanyRating::class);
+    }
 
     public function categories(){
         return $this->hasMany(CompanyCategory::class);
